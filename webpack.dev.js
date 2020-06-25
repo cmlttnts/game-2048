@@ -5,8 +5,20 @@ module.exports = merge(common, {
   
   mode: 'development',
   output: {
-    filename: "main.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, 'dev'),
 
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ]
+  }
 });
