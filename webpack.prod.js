@@ -1,7 +1,8 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
-const miniCSS = require('mini-css-extract-plugin');
+const extractCss = require('mini-css-extract-plugin');
+const optimizeCss = require('optimize-css-assets-webpack-plugin');
 
 module.exports = merge(common, {
   
@@ -11,20 +12,25 @@ module.exports = merge(common, {
     path: path.resolve(__dirname, 'dist'),
 
   },
+  optimization: {
+    minimizer: [
+      new optimizeCss()
+    ]
+  },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [miniCSS.loader, 'css-loader'],
+        use: [extractCss.loader, 'css-loader'],
       },
       {
         test: /\.scss$/,
-        use: [miniCSS.loader, 'css-loader', 'sass-loader'],
+        use: [extractCss.loader, 'css-loader', 'sass-loader'],
       },
     ]
   },
   plugins: [
-    new miniCSS({
+    new extractCss({
       filename: 'css/[name].[contentHash].css',
     }),
   ]

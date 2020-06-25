@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["eslint:recommended", "google"],
+  "rules": {
+    "no-console":"off",
+    "import/no-extraneous-dependencies": "off"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}

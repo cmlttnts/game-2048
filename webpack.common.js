@@ -1,5 +1,5 @@
 const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -9,7 +9,19 @@ module.exports = {
   },
   module: {
     rules: [
-
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          fix: true,
+        },
+      },
       {
         test: /\.html$/,
         use: ['html-loader'],
@@ -20,17 +32,17 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[hash].[ext]',
-            outputPath: 'assets'
-          }
-        }
-      }
-    ]
+            outputPath: 'assets',
+          },
+        },
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html'
-    })
-  ]
+      template: './src/index.html',
+    }),
+  ],
 
-}
+};
