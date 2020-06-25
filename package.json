@@ -5,14 +5,18 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "dev": "webpack --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "test": "jest"
   },
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "@babel/preset-env": "^7.10.3",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.1.0",
     "babel-loader": "^8.1.0",
+    "bili": "^5.0.5",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.6.0",
     "eslint": "7.2.0",
@@ -22,9 +26,11 @@
     "file-loader": "^6.0.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
+    "jest": "^26.1.0",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
+    "regenerator-runtime": "^0.13.5",
     "sass": "^1.26.9",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
