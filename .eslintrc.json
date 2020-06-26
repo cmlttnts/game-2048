@@ -3,7 +3,9 @@
   "extends": ["eslint:recommended", "google"],
   "rules": {
     "no-console":"off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "require-jsdoc":"warn",
+    "max-len": ["warn", {"code": 110}]
   },
   "parserOptions": {
     "ecmaVersion": 2020

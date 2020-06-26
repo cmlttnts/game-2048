@@ -1,7 +1,7 @@
 {
-  "name": "temp-wp-project",
+  "name": "game2048",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/js/index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "dev": "webpack --config webpack.dev.js",
@@ -38,7 +38,8 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "webpack-server": "^0.1.2"
   },
   "dependencies": {}
 }
