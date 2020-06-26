@@ -1,1 +1,1 @@
-# TEMPLATE PROJECT SETUP WITH WEBPACK CONFIGURED
+# 2048 Clone using HTML5 canvas and requestAnimationFrame
